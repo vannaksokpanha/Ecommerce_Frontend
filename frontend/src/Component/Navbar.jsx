@@ -2,10 +2,13 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { assets } from '../assets/frontend_assets/assets'
 import { useState } from 'react'
+
+
+
 const Navbar = () => {
   const [visible , setvisible] = useState(false);
   return (
-    <div className='flex items-center  justify-between py-5 font-medium'>
+    <div className='flex items-center  justify-between py-5 font-medium mb-15'>
       <img src={assets.logo} className='p-3 w-40 sm:w-45' alt='logo' />
 
       <ul className='hidden sm:flex gap-5 text-[22px] text-gray-700'>
@@ -65,5 +68,6 @@ const Navbar = () => {
     </div>
   )
 }
+
 
 export default Navbar
