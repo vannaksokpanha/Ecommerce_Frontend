@@ -4,15 +4,15 @@ import { assets } from '../assets/frontend_assets/assets'
 import { useState } from 'react'
 import { ShopContext } from '../Context/ShopContext'
 
-
-
 const Navbar = () => {
   const [visible , setvisible] = useState(false);
   const {setShowSearch, getCartCount} = useContext(ShopContext);
 
   return (
     <div className='flex items-center  justify-between py-5 font-medium mb-15'>
-      <img src={assets.logo} className='p-3 w-40 sm:w-45' alt='logo' />
+      <Link to='/'>
+        <img src={assets.logo} className='p-3 w-40 sm:w-45' alt='logo' />
+      </Link>
 
       <ul className='hidden sm:flex gap-5 text-[22px] text-gray-700'>
 
@@ -21,17 +21,17 @@ const Navbar = () => {
           <hr className='w-1/2 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
 
-         <NavLink to='/Collection' className='flex flex-col items-center gap-1'>
+         <NavLink to='/collection' className='flex flex-col items-center gap-1'>
           <p>COLLECTION</p>
           <hr className='w-1/2 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
 
-         <NavLink to='/About' className='flex flex-col items-center gap-1'>
+         <NavLink to='/about' className='flex flex-col items-center gap-1'>
           <p>ABOUT</p>
           <hr className='w-1/2 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
 
-         <NavLink to='/Contact' className='flex flex-col items-center gap-1'>
+         <NavLink to='/contact' className='flex flex-col items-center gap-1'>
           <p>CONTACT</p>
           <hr className='w-1/2 border-none h-[1.5px] bg-gray-700 hidden' />
         </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link to='/Cart' className='relative'>
+          <Link to='/cart' className='relative'>
             <img src={assets.cart_icon} className='w-7 min-w-7' alt='cart'></img>
             <p className='absolute -right-1.75 -bottom-1.75 w-6 text-center leading-5 bg-black text-white aspect-square rounded-full text-[12px]'>{getCartCount()}</p>
           </Link>
@@ -62,14 +62,13 @@ const Navbar = () => {
             <p className='hover:bg-slate-100 text-xl'>Back</p>
           </div>
           <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b' to='/'>HOME</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b' to = '/Collection'>COLLECTION</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b'to = '/About'>ABOUT</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b'to = '/Contact'>CONTACT</NavLink>
+          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b' to='/collection'>COLLECTION</NavLink>
+          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b' to='/about'>ABOUT</NavLink>
+          <NavLink onClick={()=>{setvisible(false)}} className='py-2 pl-6 border-b' to='/contact'>CONTACT</NavLink>
         </div>
       </div>
     </div>
   )
 }
-
 
 export default Navbar

@@ -32,6 +32,22 @@ const ShopContextProvider = ({ children }) => {
         toast.success('Added to cart');  
     }
     
+    const removeFromCart = async (itemId, size) => {
+        let cartData = structuredClone(cartItem);
+        if (cartData[itemId] && cartData[itemId][size]) {
+            if (cartData[itemId][size] > 1) {
+                cartData[itemId][size] -= 1;
+            } else {
+                delete cartData[itemId][size];
+                if (Object.keys(cartData[itemId]).length === 0) {
+                    delete cartData[itemId];
+                }
+            }
+            setCartItem(cartData);
+            toast.info('Removed from cart');
+        }
+    }
+    
     const getCartCount = () => {
         let totalCount = 0;
         for (const items in cartItem) {
@@ -57,7 +73,8 @@ const ShopContextProvider = ({ children }) => {
         showSearch,
         setShowSearch,
         cartItem,
-        addToCart,  
+        addToCart,
+        removeFromCart,
         setCartItem,  
         getCartCount
     }

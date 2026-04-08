@@ -1,43 +1,57 @@
+import React from 'react'
+import Title from '../Component/Title'
+import { assets } from '../assets/frontend_assets/assets'
 
 const About = () => {
+
   return (
-    <div className="about-container">
-      <h1 className="about-title">About Us</h1>
+    <div className="max-w-6xl mx-auto  px-4 py-12 border border-gray-300 p-10 ">
+      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <Title text1={"ABOUT"} text2={"US"}></Title>
+      </h1>
       
-      <div className="about-content">
-        <div className="about-image-wrapper">
+      <div className="flex flex-col md:flex-row gap-8 items-start mb-16 ">
+        <div className="md:w-1/2 w-full">
           <img 
-            src="https://plus.unsplash.com/premium_photo-1675186049222-0b5018db6ce9?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNsb3RoaW5nfGVufDB8fDB8fHww" 
+            src={assets.about_img}
             alt="About Forever Store"
-            className="about-image"
+            className="w-full h-auto rounded-lg shadow-md object-cover transition-all duration-300 ease-in-out hover:scale-105 border border-red-100"
           />
         </div>
         
-        <div className="about-text">
-          <p className="about-welcome">
-            Welcome to <strong>Forever</strong> - your trusted online shopping destination.
+        <div className="md:w-1/2 w-full my-10 mx-10 items-center">
+          <p className="text-2xl mb-4 text-gray-700  flex justify-center  gap-2">
+            Welcome to
+           <strong className="text-blue-600"><Title text1={"FOREVER"} text2={"SHOP"} ></Title></strong>
           </p>
           
-          <p className="about-description">
+          <p className="text-gray-600 mb-6 leading-relaxed text-lg">
             We take pride in offering only the highest quality products at prices that won't break the bank, backed by fast, reliable shipping and exceptional customer service that's always ready to help you with anything you need.
           </p>
           
-          <h3 className="about-subtitle">Why Shop With Us?</h3>
-          <ul className="about-list">
-            <li>✓ Quality Products</li>
-            <li>✓ Secure Payments</li>
-            <li>✓ Fast Delivery</li>
-            <li>✓ 24/7 Customer Support</li>
+          <h3 className="text-xl font-semibold mb-3 text-gray-800">Why Shop With Us?</h3>
+          <ul className="space-y-2 mb-6 text-xl">
+            <li className="text-gray-700">✓ Quality Products</li>
+            <li className="text-gray-700">✓ Secure Payments</li>
+            <li className="text-gray-700">✓ Fast Delivery</li>
+            <li className="text-gray-700">✓ 24/7 Customer Support</li>
           </ul>
-          
-          <h3 className="about-subtitle">Our Mission</h3>
-          <p className="about-description">
-            Our mission is to provide the best possible shopping experience by offering carefully curated quality products, delivering exceptional customer service at every step, and ensuring that every interaction with our brand leaves you feeling valued and satisfied.
-          </p>
         </div>
+      </div>
+      
+      <div className="bg-blue-50 rounded-xl p-8 text-center">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          Our Mission
+        </h3>
+        <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          To provide the best possible shopping experience by offering carefully curated quality products, 
+          delivering exceptional customer service at every step, and ensuring that every interaction with 
+          our brand leaves you feeling valued and satisfied.
+        </p>
       </div>
     </div>
   )
 }
 
 export default About
+
