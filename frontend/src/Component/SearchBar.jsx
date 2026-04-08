@@ -4,7 +4,7 @@ import { ShopContext } from '../Context/ShopContext';
 import { useLocation } from 'react-router-dom';
 
 const SearchBar = () => {
-  const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);  // Fixed: setsearch → setSearch
+  const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);  
   const [visible, setVisible] = useState(false);
   const location = useLocation();
 
@@ -18,7 +18,7 @@ const SearchBar = () => {
 
   return showSearch && visible ? (
     <div className='border-t border-b bg-gray-50 text-center py-8'>
-      <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 w-1/2 mx-auto rounded'>
+      <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 w-1/2 mx-auto rounded-full '>
         <input 
           value={search} 
           onChange={(e) => setSearch(e.target.value)}  

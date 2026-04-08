@@ -26,6 +26,10 @@ const Footer = () => {
                 </ul>
             </div>
         </div>
+        <hr></hr>
+        <div className="">
+                <p className='py-5 sm:text-sm md:text-[18px] lg:text-[20px]  text-center'>Copyright 2026 Forever.com - All right reserved.</p>
+        </div>
     </div>
   )
 }

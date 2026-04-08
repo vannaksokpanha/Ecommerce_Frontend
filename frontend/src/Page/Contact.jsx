@@ -5,11 +5,11 @@ import { assets } from '../assets/frontend_assets/assets'
 const contactDetails = [
   {
     title: 'Store Address',
-    lines: ['54709 Willms Station', 'Suite 350, Washington, USA'],
+    lines: ['st 1023', 'Phnom Penh Tmei, Phnom Penh, Cambodia'],
   },
   {
     title: 'Contact Us',
-    lines: ['Tel: (415) 555-0132', 'Email: hello@foreverbloom.com'],
+    lines: ['Tel: (855) 123 456 ', 'Email: hello@foreverbloom.com'],
   },
   {
     title: 'Working Hours',
@@ -18,6 +18,11 @@ const contactDetails = [
 ]
 
 const Contact = () => {
+  
+  const openEmail = () => {
+    window.open('https://t.me/Panhaclone', '_Blank'  );
+  }
+
   return (
     <div className='my-10 sm:my-16'>
       <div className='text-center text-3xl pt-8 border-t border-gray-200'>
@@ -53,13 +58,13 @@ const Contact = () => {
 
           <div className='mt-8 grid gap-4 sm:grid-cols-2'>
             {contactDetails.map((item) => (
-              <div
+              <div 
                 key={item.title}
                 className='border border-gray-200 px-5 py-6 transition hover:-translate-y-1 hover:shadow-sm'
               >
                 <h2 className='text-base font-semibold text-gray-800'>
                   {item.title}
-                </h2>
+                </h2> 
                 <div className='mt-3 space-y-1 text-sm leading-6 text-gray-500'>
                   {item.lines.map((line) => (
                     <p key={line}>{line}</p>
@@ -74,11 +79,11 @@ const Contact = () => {
               QUICK RESPONSE
             </p>
             <p className='mt-2 text-sm sm:text-base leading-7 text-gray-500'>
-              Prefer email? Send us your question and we&apos;ll respond within
+              Prefer Telegram? Send us your question and we&apos;ll respond within
               24 hours on business days.
             </p>
-            <button className='mt-5 border border-black px-8 py-3 text-sm font-medium tracking-[0.2em] text-gray-800 transition hover:bg-black hover:text-white'>
-              EMAIL US
+            <button onClick={openEmail} className='mt-5 border border-black px-8 py-3 text-sm font-medium tracking-[0.2em] text-gray-800 transition hover:bg-black hover:text-white'>
+              TELEGRAM
             </button>
           </div>
         </div>
